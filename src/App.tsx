@@ -1,3 +1,5 @@
+import Macui from "./components/ui/Macui"
+
 function App() {
   return (
     <div className="flex flex-col min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/MacBook12.jpg)' }}>
@@ -10,10 +12,12 @@ function App() {
         </ul>
       </nav>
 
-      <main className="flex-1"></main>
+      <main className="flex-1">
+        <Macui></Macui>
+      </main>
 
       <footer className="text-gray-300 text-center py-4 text-sm">
-        <p>&copy; 2026 Agent-ia ft Abrajam. Versión Beta</p>
+        <b>&copy; 2026 Agent-ia ft Abrajam. Versión Beta</b>
       </footer>
     </div>
   )
