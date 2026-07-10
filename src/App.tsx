@@ -1,58 +1,19 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-
-const slides = [
-  { id: 1, title: 'Slide 1', color: '#646cff' },
-  { id: 2, title: 'Slide 2', color: '#535bf2' },
-  { id: 3, title: 'Slide 3', color: '#747bff' },
-]
-
 function App() {
-  const [current, setCurrent] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length)
-    }, 3000)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
-    <div className="layout">
-      <nav className="navbar">
-        <div className="logo">App_agent</div>
-        <ul className="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+    <div className="flex flex-col min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/MacBook12.jpg)' }}>
+      <nav className="flex justify-between items-center px-8 py-4 bg-black/30 backdrop-blur-md text-white">
+        <div className="text-2xl font-bold">Agent-ia</div>
+        <ul className="flex gap-6 list-none m-0 p-0">
+          <li><a href="#inicio" className="text-gray-300 no-underline hover:text-white transition-colors">Inicio</a></li>
+          <li><a href="#servicios" className="text-gray-300 no-underline hover:text-white transition-colors">Servicios</a></li>
+          <li><a href="#contacto" className="text-gray-300 no-underline hover:text-white transition-colors">Contacto</a></li>
         </ul>
       </nav>
 
-      <main className="main">
-        <section className="carousel">
-          {slides.map((slide, i) => (
-            <div
-              key={slide.id}
-              className={`slide ${i === current ? 'active' : ''}`}
-              style={{ backgroundColor: slide.color }}
-            >
-              <h2>{slide.title}</h2>
-            </div>
-          ))}
-          <div className="carousel-dots">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                className={`dot ${i === current ? 'active' : ''}`}
-                onClick={() => setCurrent(i)}
-              />
-            ))}
-          </div>
-        </section>
-      </main>
+      <main className="flex-1"></main>
 
-      <footer className="footer">
-        <p>&copy; 2026 MiApp. Todos los derechos reservados.</p>
+      <footer className="text-gray-300 text-center py-4 text-sm">
+        <p>&copy; 2026 Agent-ia ft Abrajam. Versión Beta</p>
       </footer>
     </div>
   )
