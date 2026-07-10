@@ -482,7 +482,7 @@ function MobileMenu({
 }) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger>
         <button
           disabled={disabled}
           className="flex items-center justify-center w-12 h-12 rounded-xl border-none cursor-pointer transition-all hover:brightness-110"
@@ -492,7 +492,7 @@ function MobileMenu({
             border: "1px solid rgba(255,255,255,.2)",
             boxShadow: "0 4px 16px rgba(0,0,0,.3)",
           }}
-        >
+        >            
           <MenuIcon className="text-white" size={24} />
         </button>
       </DropdownMenuTrigger>
@@ -745,7 +745,7 @@ export default function Maciu() {
           <SnapshotStage onReady={handleSnapshotsReady} />
 
           {isMobile ? (
-            <div className="absolute bottom-6 left-6 z-50">
+            <div className="absolute top-10 right-6 z-50">
               <MobileMenu
                 onAppSelect={handleMobileSelect}
                 disabled={isAnimating || !snapshotsReady}
